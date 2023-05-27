@@ -4,7 +4,7 @@ import { AiFillGithub } from 'react-icons/ai';
 import { FcGoogle } from 'react-icons/fc';
 import { useCallback, useState } from 'react';
 import { FieldValues, SubmitHandler, set, useForm } from 'react-hook-form';
-import useRegister from '@/hooks/useRegister';
+import useRegisterModal from '@/hooks/useRegisterModal';
 import Modal from './Modal';
 import Heading from '../Heading';
 import Input from '../inputs/Input';
@@ -12,7 +12,7 @@ import { toast } from 'react-hot-toast';
 import Button from '../Button';
 
 const RegisterModal = () => {
-  const registerModal = useRegister();
+  const registerModal = useRegisterModal();
   const [isLoading, setIsLoading] = useState(false);
 
   const {
