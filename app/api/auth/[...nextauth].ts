@@ -1,5 +1,5 @@
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
-import { AuthOptions } from 'next-auth';
+import NextAuth, { AuthOptions } from 'next-auth';
 import prisma from '@/libs/prismadb';
 import GithubProvider from 'next-auth/providers/github';
 import GoogleProvider from 'next-auth/providers/google';
@@ -61,3 +61,5 @@ export const authOptions: AuthOptions = {
   secret: process.env.NEXT_AUTH_SECRET!,
   debug: process.env.NODE_ENV === 'development',
 };
+
+export default NextAuth(authOptions);

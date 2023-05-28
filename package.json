@@ -11,6 +11,7 @@
     "db:migrate-save": "prisma migrate dev",
     "db:migrate-up": "prisma migrate deploy",
     "prisma:generate": "prisma generate",
+    "prisma:studio": "prisma studio",
     "docker:db": "docker-compose -f docker-compose.db.yml up -d"
   },
   "dependencies": {
