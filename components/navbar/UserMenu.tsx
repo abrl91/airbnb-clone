@@ -6,11 +6,13 @@ import { useCallback, useState } from 'react';
 import MenuItem from './MenuItem';
 import useRegisterModal from '@/hooks/useRegisterModal';
 import useLoginModal from '@/hooks/useLoginModal';
+import { useSession } from 'next-auth/react';
 
 const UserMenu = () => {
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
   const [isOpen, setIsOpen] = useState(false);
+  const { data: session, status } = useSession();
 
   const toggleMenu = useCallback(() => {
     setIsOpen((prev) => !prev);
@@ -30,9 +32,9 @@ const UserMenu = () => {
           onClick={toggleMenu}
         >
           <AiOutlineMenu size={20} />
-          <div className='hidden md:block'>
+          {status === 'authenticated' &&  <div className='hidden md:block'>
             <Avatar />
-          </div>
+          </div>}
         </div>
       </div>
       {isOpen && (
