@@ -4,7 +4,7 @@ import { DefaultUser } from 'next-auth';
 import Image from 'next/image';
 
 export interface AvatarProps {
-  image?: DefaultUser['image'];
+  image: DefaultUser['image'];
 }
 
 const Avatar: React.FC<AvatarProps> = ({ image }) => {
